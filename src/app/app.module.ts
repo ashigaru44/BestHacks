@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AgmCoreModule } from '@agm/core';
 import { AchievmentsComponent } from './pages/achievments/achievments.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AgmDirectionModule } from 'agm-direction'; 
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, AchievmentsComponent],
@@ -23,7 +24,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDiEMwxFB787rEkK-St_qion3WTMZzyUn4'
     }),
-    HttpClientModule
+    HttpClientModule,
+    AgmDirectionModule
   ],
   providers: [
     StatusBar,
