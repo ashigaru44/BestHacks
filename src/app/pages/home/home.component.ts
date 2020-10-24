@@ -15,10 +15,13 @@ export class HomeComponent implements OnInit {
 
   latitude: number;
   longitude: number;
+  origin;
+  destination;
+  travelledDist: number;
   zoom: number;
-  
   ngOnInit() {this.setCurrentLocation();
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id');}
+    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+  }
 
   private setCurrentLocation() {
     if ('geolocation' in navigator) {
@@ -29,6 +32,17 @@ export class HomeComponent implements OnInit {
       });
     }
   }
+  getDistance(event) {
+    this.travelledDist = event.routes[0].legs[0].distance.value/1000
+    console.log(this.travelledDist)
+  }
+
+  getDirection(position) {
+    this.origin = {lat:  this.latitude, lng: this.longitude };
+    this.destination = { lat: position.coords.lat, lng: position.coords.lng};
+
+  }
+
 }
 
 

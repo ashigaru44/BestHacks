@@ -23,9 +23,7 @@ export class AchievmentsComponent implements OnInit {
       howManyTrees: 56,
       amountOfCO2: 1.7,
       userKM: 11,
-      userSteps: 1758,
       userXP: 50,
-      progress: 0.5
     }
     this.indexes = Array(this.currentUser.level).fill(0);
   }
