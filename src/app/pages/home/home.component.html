@@ -4,7 +4,6 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,11 +12,19 @@
   </ion-header>
 
   <div class="map">
-    <agm-map
+    <agm-map #map id="map"
             [latitude]="latitude"
             [longitude]="longitude"
-            [zoom]="20">
-            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+            [zoom]="20"
+            (mapClick) = "getDirection($event)">
+            <agm-marker *ngIf="destination == null" [latitude]="latitude" [longitude]="longitude"></agm-marker>
+            
+            <agm-direction 
+            (onChange) = "getDistance($event)"
+            travelMode="TRANSIT"
+            [origin]="origin" 
+            [destination]="destination">
+          </agm-direction>
   </agm-map>
   </div>
 </ion-content>

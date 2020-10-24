@@ -14,12 +14,10 @@ export class AppComponent implements OnInit {
   user: User = {
     name: 'Jan',
     rank: 'Doświadczony Gajowy',
-    progress: 10,
     level:10,
     howManyTrees:10,
     amountOfCO2:10,
     userKM:10,
-    userSteps:10, //Math.round(1312.336 * this.userKM)
     userXP:10
   };
   public selectedIndex = 0;
