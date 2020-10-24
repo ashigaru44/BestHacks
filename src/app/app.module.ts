@@ -11,8 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { AgmCoreModule } from '@agm/core';
 import { AchievmentsComponent } from './pages/achievments/achievments.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AgmDirectionModule } from 'agm-direction'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, AchievmentsComponent],
@@ -24,8 +24,8 @@ import { AgmDirectionModule } from 'agm-direction';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDiEMwxFB787rEkK-St_qion3WTMZzyUn4'
     }),
-    HttpClientModule,
-    AgmDirectionModule
+    AgmDirectionModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
