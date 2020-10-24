@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <div style="display: flex;">
+    <ion-toolbar style="width: min-content;">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>{{ folder }}</ion-title>
+    </ion-toolbar>
+    <h2 style="text-align: center; width: 95%; position: relative; right: 40px;">Cześć  <span style="color: green;">{{currentUser.name}}</span>! Patrz, ile udało ci się dokonać!</h2>
+  </div>
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <ion-card-content>
+  <ion-grid>
+    <ion-item>
+    <ion-row class = "row-achiev">
+        <span style="display: inline;">Poziom {{currentUser.name}} :</span>
+        <div *ngFor="let index of indexes" style="display: flex;">
+          <ion-icon name="earth-outline" class="icon-styling" style="color: rgb(20, 20, 133);"></ion-icon>
+        </div>
+    </ion-row>
+  </ion-item>
+    
+    <ion-item>
+    <ion-row class = "row-achiev">
+      <div >
+        <span>Posadziłeś aż {{currentUser.howManyTrees}} drzew! </span>
+        <ion-icon name="leaf-outline" class="icon-styling" style="color: green;"></ion-icon>
+      </div>
+    </ion-row>
+  </ion-item>
+<ion-item>
+    <ion-row class = "row-achiev">
+      <div>
+        <span>Udało ci się zmniejszyć emisję o {{currentUser.amountOfCO2}} gram CO2. </span>
+        <ion-icon name="skull-outline" class="icon-styling" style="color: rgb(136, 16, 16);"></ion-icon>
+      </div>
+    </ion-row>
+  </ion-item>
+    
+  <ion-item>
+    <ion-row class = "row-achiev">
+      <div>
+        <span>Przeszedłeś już {{userKM}} kilomentów, a to jest {{currentUser.userSteps}} kroków! </span>
+        <ion-icon name="walk-outline" class="icon-styling" ></ion-icon>
+      </div>
+    </ion-row>
+    </ion-item>
+
+  <ion-item>
+    <ion-row class = "row-achiev">
+          <div style="width: 100%;">
+          <span >Twój postęp do następnego poziomu : </span>
+          <ion-icon name="rocket-outline" class="icon-styling" style="color: rgb(255, 122, 13);"></ion-icon>
+          <div> 
+            <ion-progress-bar style= "width: 50%; margin-top: 10px; display: inline-block;" [value]="currentUser.progress"></ion-progress-bar>
+            <span style="margin-left: 20px;">{{currentUser.userXP}}/{{levelXP}} </span>
+          </div>
+        </div>
+    </ion-row>
+  </ion-item>
+
+<ion-item>
+    <ion-row class = "row-achiev">
+      <div>
+        <span>Potrzebujesz jeszcze {{levelXP - currentUser.userXP}} punktów, aby posadzić kolejne drzewo. </span>
+        <ion-icon name="thumbs-up-outline" class="icon-styling" style="color: gold;"></ion-icon>
+      </div>
+    </ion-row>
+</ion-item>
+    
+
+</ion-grid>
+</ion-card-content>
+</ion-card>
+
+  <ion-card>
+  <ion-grid>
+
+        <ion-card-header>
+          <ion-card-title>Następne osiągnięcia :</ion-card-title>
+        </ion-card-header>
+    
+    <ion-card-content>
+        <div *ngFor = "let achievment of achievments">
+          <ion-item>
+            {{achievment}} <ion-icon name="lock-closed-outline" style="margin-left: 10px;"></ion-icon>
+          </ion-item>
+        </div>
+    </ion-card-content>
+
+
+
+  </ion-grid>
+</ion-card>
+</ion-content>
+
+
+
+

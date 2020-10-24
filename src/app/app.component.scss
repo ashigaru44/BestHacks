@@ -1,4 +1,4 @@
-ion-menu ion-content {
+ion-menu ion-content ion-list {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
 
@@ -39,6 +39,7 @@ ion-menu.md ion-list#labels-list ion-list-header {
   margin-bottom: 18px;
 
   color: #757575;
+  
 
   min-height: 26px;
 }
