@@ -1,3 +1,24 @@
-<p>
-  login-page works!
-</p>
+<div class="loginbox">
+  <h1>Zaloguj się</h1>
+<form (submit)="onSubmit()">
+  <ion-item>
+    <ion-label position="floating">Nazwa użytkownika</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Hasło</ion-label>
+    <ion-input type="password"></ion-input> 
+  </ion-item>
+  
+  <div class="button-container">
+    <ion-button color="success" type="submit">Zaloguj się</ion-button>
+  </div>
+
+  <h2>Nie masz konta? Zarejestruj się!</h2>
+  <div class="button-container">
+    <!--Trzeba tu zamiast href dodać routing-->
+    <ion-button color="success" href="#">Zarejestruj się</ion-button>
+  </div>
+</form>
+</div>
