@@ -7,5 +7,4 @@ export interface User {
     userKM:number
     //userSteps:number //Math.round(1312.336 * this.userKM)
     userXP:number
-  
 }
