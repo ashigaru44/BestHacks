@@ -1,0 +1,90 @@
+<ion-content [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-avatar class="profile_avatar" slot="end">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <ion-label class="profile_name">
+          Użytkownik
+        </ion-label>
+      </ion-item>
+      
+    </ion-card-header>
+
+    <ion-card-content class="progress_bar_card">
+      <ion-list-header>
+        <ion-label class="progress_bar_label">
+          <div class="level_text">
+            Poziom:
+          </div>
+        </ion-label>
+      </ion-list-header>
+      <ion-progress-bar value="0.5"></ion-progress-bar>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      <ion-label>Znajomi</ion-label>
+      <ion-button fill="outline" slot="end">View</ion-button>
+    </ion-item>
+
+    <ion-card-content class="friends_list">
+      <ion-list>
+        <ion-item>
+          <ion-label>Pokémon Yellow</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mega Man X</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>The Legend of Zelda</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      <ion-label>Osiągnięcia</ion-label>
+      <ion-button fill="outline" slot="end">View</ion-button>
+    </ion-item>
+
+    <ion-card-content class="achievements_list">
+      <ion-list>
+        <ion-item>
+          <ion-icon name="trophy-outline" slot="start"></ion-icon>
+          <ion-label>Przeszedles 5km</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="trophy-outline" slot="start"></ion-icon>
+          <ion-label>Przeszedles 20km</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="trophy-outline" slot="start"></ion-icon>
+          <ion-label>Zasadziłeś 10 drzew!</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item class="user_settings">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-item button (click)="openModal()">Ustawienia Użytkownika</ion-item>
+
+    </ion-item>
+  </ion-card>
+</ion-content>

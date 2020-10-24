@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ustawienia Użytkownika</ion-title>
+    <ion-buttons>
+      <ion-button (click)="dismissModal()">Powrót</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item button (click)="changePasswd()">Zmień hasło</ion-item>
+  <ion-item button (click)="changeName()">Zmień imię i nazwisko</ion-item>
+  <ion-item button (click)="changeMail()">Zmień e-mail</ion-item>
+  <ion-item button (click)="privateSetts()">Ustawienia prywatności</ion-item>
+  <ion-item button (click)="deleteAccount()">Usuń konto </ion-item>
+</ion-content>
