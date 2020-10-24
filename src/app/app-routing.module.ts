@@ -4,6 +4,7 @@ import { AchievmentsComponent } from './pages/achievments/achievments.component'
 import { HomeComponent } from './pages/home/home.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
     path: 'home', component: HomeComponent,
   },
   {
-    path: 'user-profile', redirectTo: 'home',
+    path: 'user-profile', component: UserProfileComponent,
   },
   {
     path: 'achievements', component: AchievmentsComponent,
@@ -25,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'register', component: RegisterPageComponent,
-  }
+  },
 ];
 
 @NgModule({
