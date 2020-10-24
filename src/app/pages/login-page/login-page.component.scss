@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 10px 0 10px ;
+    padding: 0;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 40px 0 10px;
+    padding: 0;
+}
+
+.loginbox {
+    width: 320px;
+    height: 430px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+}
+
+ion-item {
+    margin: 15px 0 15px 0;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
