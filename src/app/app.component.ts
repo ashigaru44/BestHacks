@@ -32,12 +32,12 @@ export class AppComponent implements OnInit {
     {
       title: 'Profil',
       url: '/user-profile',
-      icon: 'paper-plane'
+      icon: 'person'
     },
     {
       title: 'Osiągnięcia',
       url: '/achievements',
-      icon: 'paper-plane'
+      icon: 'star'
     },
   ];
 
