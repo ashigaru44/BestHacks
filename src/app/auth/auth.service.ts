@@ -22,6 +22,13 @@ export class AuthService {
     return this.userSubject.value;
   }
 
+  getUserData() {
+    this.http.get('http://127.0.0.1:5000/api/user/' + JSON.parse(localStorage.getItem("user"))["user"]).subscribe(d =>{
+      console.log(d);
+      return d;
+    });
+    }
+
   login(username, password) {
     let headers = new HttpHeaders().set('Authorization', 'Basic ' + window.btoa(`${username}:${password}`));
     return this.http.get('http://127.0.0.1:5000/api/login', {headers}).pipe(
@@ -40,11 +47,13 @@ export class AuthService {
   }
 
   performUserLogin(res) {
+   console.log(res)
    localStorage.setItem('user', JSON.stringify(res));
+   console.log(JSON.parse(localStorage.getItem("user"))["user"])
    this.userSubject.next(res);
   }
 
   getToken() {
-    return localStorage.getItem('user')['token']
+    return JSON.parse(localStorage.getItem("user"))["token"]
   }
 }

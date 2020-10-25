@@ -10,8 +10,8 @@ import { delay, first } from 'rxjs/operators';
 })
 export class LoginPageComponent implements OnInit {
 
-  username: string = "xd";
-  password: string = "xd";
+  username: string = "";
+  password: string = "";
 
   constructor(private router: Router, private authService: AuthService) { }
 
@@ -20,7 +20,6 @@ export class LoginPageComponent implements OnInit {
 
 
   onSubmit() {
-    console.log(this.username, this.password);
     this.authService.login(this.username, this.password).pipe(first())
   .subscribe(data => this.router.navigate(['/']), error => console.log(error));
   }

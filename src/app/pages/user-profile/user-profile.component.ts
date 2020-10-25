@@ -4,6 +4,7 @@ import { UserSettingsModalComponent } from '../user-settings-modal/user-settings
 import { FriendsModalComponent } from './friends-modal/friends-modal.component';
 import { User } from '../../user';
 import { AchievementModalComponent } from './achievement-modal/achievement-modal.component';
+import { ranks } from '../../ranks'
 
 @Component({
   selector: 'app-user-profile',
@@ -11,7 +12,8 @@ import { AchievementModalComponent } from './achievement-modal/achievement-modal
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-  currentUser: User  
+  ranksT = ranks;
+  currentUser: User;  
   progress: number;
   levelXP: number;
   constructor(private modalCtrl: ModalController) { }
@@ -42,7 +44,7 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.currentUser = {
       name: "Jan",
-      rank: "Leśny dzban",
+      rank: 4,
       level: 3,
       howManyTrees: 56,
       amountOfCO2: 1.7,

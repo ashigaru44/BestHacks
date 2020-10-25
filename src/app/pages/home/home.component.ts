@@ -1,6 +1,6 @@
-import { LatLng } from '@agm/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   public folder: string;
-
-  constructor(private activatedRoute: ActivatedRoute) { 
+  currentUser;
+  constructor(private activatedRoute: ActivatedRoute, private auth: AuthService) { 
     
   }
 
