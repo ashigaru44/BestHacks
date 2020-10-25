@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { AuthService } from 'src/app/auth/auth.service';
+import { delay, first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login-page',
@@ -9,11 +10,20 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  username: string = "xd";
+  password: string = "xd";
 
-  ngOnInit() {}
+  constructor(private router: Router, private authService: AuthService) { }
 
-  onSubmit() {}
+  ngOnInit() {
+  }
+
+
+  onSubmit() {
+    console.log(this.username, this.password);
+    this.authService.login(this.username, this.password).pipe(first())
+  .subscribe(data => this.router.navigate(['/']), error => console.log(error));
+  }
 
   btnClick= function () {
     this.router.navigateByUrl('/register');

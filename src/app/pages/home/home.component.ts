@@ -1,3 +1,4 @@
+import { LatLng } from '@agm/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 @Component({
@@ -15,8 +16,8 @@ export class HomeComponent implements OnInit {
 
   latitude: number;
   longitude: number;
-  origin;
-  destination;
+  origin: any;
+  destination: any;
   travelledDist: number;
   zoom: number;
   ngOnInit() {this.setCurrentLocation();
@@ -33,14 +34,12 @@ export class HomeComponent implements OnInit {
     }
   }
   getDistance(event) {
-    this.travelledDist = event.routes[0].legs[0].distance.value/1000
-    console.log(this.travelledDist)
+    this.travelledDist = event.routes[0].legs[0].distance.value/1000;
   }
 
-  getDirection(position) {
-    this.origin = {lat:  this.latitude, lng: this.longitude };
-    this.destination = { lat: position.coords.lat, lng: position.coords.lng};
-
+  async getDirection(position) {
+    this.origin = {lat:  this.latitude.toString(), lng: this.longitude.toString() };
+    this.destination = { lat: parseFloat(position.coords.lat), lng: parseFloat(position.coords.lng)};
   }
 
 }

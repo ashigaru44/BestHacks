@@ -1,6 +1,6 @@
 export interface User {
     name: string
-    rank: string
+    rank: number
     level:number
     howManyTrees:number
     amountOfCO2:number

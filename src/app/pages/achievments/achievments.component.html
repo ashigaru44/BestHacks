@@ -9,7 +9,7 @@
 
 <ion-content>
 <ion-card>
-  <ion-card-title style="text-align: center; font-size: large; margin-top: 10px;" >Cześć <span style="color: green;">{{currentUser.name}}</span>! Patrz, ile udało ci się dokonać!</ion-card-title>
+  <ion-card-title style="text-align: center; font-size: large; margin-top: 10px; margin-bottom: -20px;" >Cześć <span style="color: green;">{{currentUser.name}}</span>! Patrz, ile udało ci się dokonać!</ion-card-title>
 <ion-card-content>
 <ion-grid>
   <ion-item>
@@ -41,7 +41,7 @@
 <ion-item>
   <ion-row class = "row-achiev">
     <div>
-      <span>Przeszedłeś już {{currentUser.userKM}} kilomentów, a to jest {{currentUser.userSteps}} kroków! </span>
+      <span>Przeszedłeś już {{currentUser.userKM}} kilometrów, a to jest {{currentUser.userKM * 1200}} kroków! </span>
       <ion-icon name="walk-outline" class="icon-styling" ></ion-icon>
     </div>
   </ion-row>
@@ -53,7 +53,7 @@
         <span >Twój postęp do następnego poziomu : </span>
         <ion-icon name="rocket-outline" class="icon-styling" style="color: rgb(255, 122, 13);"></ion-icon>
         <div> 
-          <ion-progress-bar style= "width: 50%; margin-top: 10px; display: inline-block;" [value]="currentUser.progress"></ion-progress-bar>
+          <ion-progress-bar style= "width: 50%; margin-top: 10px; display: inline-block;" [value]="progress"></ion-progress-bar>
           <span style="margin-left: 20px;">{{currentUser.userXP}}/{{levelXP}} </span>
         </div>
       </div>

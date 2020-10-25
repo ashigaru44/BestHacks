@@ -4,16 +4,19 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { User } from './user';
-
+import { AuthService } from './auth/auth.service';
+import { ranks } from './ranks'
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
+  currentUser;
+  ranksT = ranks;
   user: User = {
     name: 'Jan',
-    rank: 'Doświadczony Gajowy',
+    rank: 4,
     level:10,
     howManyTrees:10,
     amountOfCO2:10,
@@ -42,7 +45,8 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private authService: AuthService
   ) {
     this.initializeApp();
   }
@@ -59,5 +63,9 @@ export class AppComponent implements OnInit {
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.url.split('/')[1] === path.toLowerCase());
     }
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

@@ -11,7 +11,7 @@
               <ion-label>{{user.name}}</ion-label>
             </ion-item>
           </ion-list-header>
-          <ion-note>{{user.rank}}</ion-note>
+          <ion-note>{{ranksT[user.rank]}}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
@@ -21,7 +21,7 @@
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
-      <ion-button expand="full" color="secondary">Wyloguj się</ion-button>
+      <ion-button expand="full" color="secondary" (click)="logout()">Wyloguj się</ion-button>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
